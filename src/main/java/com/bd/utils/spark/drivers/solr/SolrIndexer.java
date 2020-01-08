@@ -9,9 +9,8 @@ import org.apache.spark.sql.*;
 import java.io.IOException;
 import java.util.Iterator;
 
-//import sun.jvm.hotspot.ui.SAEditorPane;
 
-public class STMDriver {
+public class SolrIndexer {
 
     static HttpSolrClient solrClient = new HttpSolrClient.Builder("http://localhost:8630/solr/rins_ref_cm")
             .withConnectionTimeout(10000)
@@ -31,7 +30,7 @@ public class STMDriver {
                 .option("driver", "oracle.jdbc.driver.OracleDriver")
                 .option("fetchsize", "100000")
                 .option("numPartitions", "100")
-                // .option("partitionColumn", "dtl_id")
+                // .option("partitionColumn", "col1")
                 //.option("lowerBound", "301439216")
                 //.option("upperBound","4701829040")
                 .load();
